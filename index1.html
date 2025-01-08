@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Gambar</title>
+    <style>
+        /* Container fleksibel */
+        .image-container {
+            display: inline-block; /* Container menyesuaikan ukuran gambar */
+            margin: 20px auto; /* Center container */
+            border: 2px solid #ccc; /* Opsional: garis tepi untuk visualisasi */
+        }
+
+        /* Gambar fleksibel */
+        .image-container img {
+            max-width: 100%; /* Gambar tidak akan melebihi lebar container */
+            height: auto; /* Tinggi mengikuti proporsi gambar asli */
+            display: block; /* Hindari jarak inline bawaan gambar */
+        }
+
+        /* Hover effect */
+        .image-container img:hover {
+            transform: scale(1.05); /* Perbesar gambar sedikit saat di-hover */
+            transition: transform 0.3s ease; /* Animasi perbesaran */
+        }
+    </style>
+</head>
+<body>
+    <!-- Container gambar -->
+    <div class="image-container">
+        <img src="C:/Users/ASUS/Desktop/furniture/assets/images/about1.png" alt="Contoh Gambar">
+    </div>
+</body>
+</html>

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Mebel Jepara</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/profile.css">
+    <link rel="stylesheet" href="assets/css/catalog.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar luxury-nav">
+            <div class="nav-brand">
+                <img src="logo.png" alt="Logo" class="brand-logo">
+                <h1>Mebel Jepara</h1>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search our collections...">
+                <span class="search-icon">
+                    <i class="fas fa-search"></i>
+                    <div class="search-loader"></div>
+                </span>
+            </div>
+            <div class="nav-overlay" onclick="toggleNav()"></div>
+            <ul class="nav-links">
+                <li class="nav-item" style="--i:1">
+                    <a href="#home"><i class="fas fa-home"></i>Home</a>
+                </li>
+                <li class="nav-item" style="--i:2">
+                    <a href="#profile"><i class="fas fa-user"></i>Profile</a>
+                </li>
+                <li class="nav-item" style="--i:3">
+                    <a href="#products"><i class="fas fa-couch"></i>Product</a>
+                </li>
+                <li class="nav-item" style="--i:4">
+                    <a href="#order"><i class="fas fa-shopping-cart"></i>Cara Order</a>
+                </li>
+                <li class="nav-item" style="--i:5">
+                    <a href="#articles"><i class="fas fa-newspaper"></i>Artikel</a>
+                </li>
+                <li class="nav-item" style="--i:6">
+                    <a href="#contact"><i class="fas fa-envelope"></i>Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger-container golden-lines" onclick="toggleNav()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="welcome">
+        <div class="slideshow">
+            <div class="slide luxury-slide" id="slide1">
+                <div class="slide-content">
+                    <div class="luxury-border">
+                        <h1>Toko Mebel Jepara Terpercaya</h1>
+                        <p>Hadirkan keindahan dan kehangatan mebel Jepara di rumah Anda. Kami menawarkan produk berkualitas tinggi, desain elegan, dan layanan terpercaya.</p>
+                        <p>Belanja mudah, aman, dan nikmati pengiriman ke seluruh Indonesia.</p>
+                        <div class="cta-buttons">
+                            <a href="#products" class="btn btn-primary">
+                                <span class="btn-content">
+                                    <i class="fas fa-eye"></i>
+                                    Lihat Produk
+                                </span>
+                            </a>
+                            <a href="#contact" class="btn btn-secondary">
+                                <span class="btn-content">
+                                    <i class="fas fa-phone"></i>
+                                    Hubungi Kami
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide luxury-slide" id="slide2">
+                <div class="slide-content">
+                    <div class="luxury-border">
+                        <h1>Luxury Furniture</h1>
+                        <p>Classic Style</p>
+                        <div class="cta-buttons">
+                            <a href="#products" class="btn btn-primary">
+                                <span class="btn-content">
+                                    <i class="fas fa-crown"></i>
+                                    Explore Collection
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide luxury-slide" id="slide3">
+                <div class="slide-content">
+                    <div class="luxury-border">
+                        <h1>Modern Furniture</h1>
+                        <p>Minimalist Style</p>
+                        <div class="cta-buttons">
+                            <a href="#products" class="btn btn-primary">
+                                <span class="btn-content">
+                                    <i class="fas fa-book-open"></i>
+                                    View Catalog
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-indicators">
+            <span class="indicator active"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        // Scroll effect
+        window.addEventListener("scroll", function () {
+            const navbar = document.querySelector(".navbar");
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+
+        // Mobile menu toggle with enhanced animation
+        function toggleNav() {
+            const navLinks = document.querySelector(".nav-links");
+            const hamburger = document.querySelector(".hamburger-container");
+            const overlay = document.querySelector(".nav-overlay");
+            const body = document.body;
+
+            navLinks.classList.toggle("active");
+            hamburger.classList.toggle("change");
+            overlay.classList.toggle("active");
+
+            // Toggle body scroll
+            if (navLinks.classList.contains("active")) {
+                body.style.overflow = "hidden";
+            } else {
+                body.style.overflow = "";
+            }
+        }
+
+        // Auto close nav on clicking a link
+        const navLinks = document.querySelectorAll('.nav-links li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                const navLinks = document.querySelector(".nav-links");
+                const hamburger = document.querySelector(".hamburger-container");
+                const overlay = document.querySelector(".nav-overlay");
+                const body = document.body;
+
+                navLinks.classList.remove("active");
+                hamburger.classList.remove("change");
+                overlay.classList.remove("active");
+                body.style.overflow = "";
+
+                // Smooth scroll
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Slide indicators functionality
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.indicator');
+        let currentSlide = 0;
+
+        function updateIndicators() {
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateIndicators();
+        }, 5000);
+    </script>
+</body>
+</html>
+<body>
+<!-- section about -->
+<section id="profile" class="about">
+    <div class="about-image animate__animated animate__fadeInLeft">
+        <div class="image-container">
+            <img src="assets/images/about1.jpg" alt="Furniture Jepara" class="about-img-1" />
+            <div class="image-overlay"></div>
+        </div>
+        <div class="image-container">
+            <img src="assets/images/about2.png" alt="Furniture Jepara 2" class="about-img-2" />
+            <div class="image-overlay"></div>
+        </div>
+    </div>
+    <div class="about-content animate__animated animate__fadeInRight">
+        <div class="content-wrapper">
+            <span class="subtitle animate__animated animate__fadeIn animate__delay-1s">EXCELLENCE IN CRAFTSMANSHIP</span>
+            <h2>Furniture Jepara Real</h2>
+            <div class="separator">
+                <span class="separator-line"></span>
+                <span class="separator-icon">♦</span>
+                <span class="separator-line"></span>
+            </div>
+            <p class="lead-text animate__animated animate__fadeIn animate__delay-1s">
+                Kami adalah produsen dan supplier furniture Jepara yang berpengalaman dalam menciptakan hasil produksi mebel dengan desain furniture klasik mewah dan furniture minimalis modern.
+            </p>
+            <div class="text-content animate__animated animate__fadeIn animate__delay-2s">
+                <p>
+                    Dengan menggunakan kayu jati dan kayu mahoni berkualitas dan dengan teknik pengerjaan yang halus, kami menghasilkan produk mebel klasik mewah dan mebel minimalis modern yang tidak hanya indah, tetapi juga kokoh dan tahan lama.
+                </p>
+                <p>
+                    Selain produk yang kami tawarkan pada katalog online pada website furniturejeparareal.com, customer juga bisa memesan furniture atau mebel custom model sesuai dengan desain dan ukuran yang dibutuhkan.
+                </p>
+            </div>
+            <div class="features-grid animate__animated animate__fadeIn animate__delay-2s">
+                <div class="feature">
+                    <span class="feature-icon">✓</span>
+                    <span class="feature-text">Premium Quality</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">✓</span>
+                    <span class="feature-text">Custom Design</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">✓</span>
+                    <span class="feature-text">Expert Craftsmanship</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    // Fungsi untuk menangani animasi saat elemen terlihat
+function handleIntersection(entries, observer) {
+    entries.forEach(entry => {
+        // Jika elemen terlihat
+        if (entry.isIntersecting) {
+            // Tambahkan kelas animasi yang sesuai
+            if (entry.target.classList.contains('about-image')) {
+                entry.target.classList.add('animate__fadeInLeft');
+            }
+            if (entry.target.classList.contains('about-content')) {
+                entry.target.classList.add('animate__fadeInRight');
+            }
+            // Nonaktifkan observer untuk elemen ini setelah animasi pertama
+            observer.unobserve(entry.target);
+        }
+    });
+}
+
+// Konfigurasi Intersection Observer
+const observerOptions = {
+    root: null, // menggunakan viewport
+    threshold: 0.2, // trigger ketika 20% elemen terlihat
+    rootMargin: '0px' // tidak ada margin tambahan
+};
+
+// Buat instance Intersection Observer
+const observer = new IntersectionObserver(handleIntersection, observerOptions);
+
+// Tunggu sampai DOM selesai dimuat
+document.addEventListener('DOMContentLoaded', function() {
+    // Hapus kelas animasi default
+    const aboutImage = document.querySelector('.about-image');
+    const aboutContent = document.querySelector('.about-content');
+    
+    if (aboutImage && aboutContent) {
+        // Hapus kelas animate__animated dan animasi awal
+        aboutImage.classList.remove('animate__animated', 'animate__fadeInLeft');
+        aboutContent.classList.remove('animate__animated', 'animate__fadeInRight');
+        
+        // Tambahkan kelas animate__animated kembali (tapi tanpa animasi spesifik)
+        aboutImage.classList.add('animate__animated');
+        aboutContent.classList.add('animate__animated');
+        
+        // Mulai observe elemen
+        observer.observe(aboutImage);
+        observer.observe(aboutContent);
+    }
+});
+</script>
+</head>
+<body>
+<!-- Ultra Luxury Product Catalog -->
+<section id="products" class="lux-catalog">
+    <div class="lux-container">
+        <!-- Header -->
+        <div class="lux-header">
+            <div class="lux-brand-mark">
+                <div class="lux-mark-line"></div>
+                <span class="lux-tag">ULTRA PREMIUM</span>
+                <div class="lux-mark-line"></div>
+            </div>
+            <h2 class="lux-title">Katalog Produk</h2>
+            <div class="lux-title-accent">
+                <span>Exclusive Collection</span>
+            </div>
+        </div>
+
+        <!-- Grid -->
+        <div class="lux-grid">
+            <!-- Furniture Cafe -->
+            <div class="lux-item" style="--item-index: 0">
+                <div class="lux-frame">
+                    <div class="lux-image-container">
+                        <img class="lux-image" src="assets/images/furniture cafe.jpg" alt="Furniture Cafe" loading="lazy">
+                        <div class="lux-overlay">
+                            <span class="lux-category">CAFE</span>
+                            <button class="lux-btn">Detail</button>
+                        </div>
+                    </div>
+                    <div class="lux-info">
+                        <h3 class="lux-info-title">Furniture Cafe</h3>
+                        <p class="lux-info-desc">Desain Modern & Elegant untuk Cafe Anda</p>
+                        <div class="lux-badges">
+                            <span class="lux-badge">Premium</span>
+                            <span class="lux-badge">Limited</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Furniture Kantor -->
+            <div class="lux-item" style="--item-index: 1">
+                <div class="lux-frame">
+                    <div class="lux-image-container">
+                        <img class="lux-image" src="assets/images/furniture kantor.jpg" alt="Furniture Kantor" loading="lazy">
+                        <div class="lux-overlay">
+                            <span class="lux-category">OFFICE</span>
+                            <button class="lux-btn">Detail</button>
+                        </div>
+                    </div>
+                    <div class="lux-info">
+                        <h3 class="lux-info-title">Furniture Kantor</h3>
+                        <p class="lux-info-desc">Solusi Furniture Modern untuk Kantor</p>
+                        <div class="lux-badges">
+                            <span class="lux-badge">Premium</span>
+                            <span class="lux-badge">Custom</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mebel Anak -->
+            <div class="lux-item" style="--item-index: 2">
+                <div class="lux-frame">
+                    <div class="lux-image-container">
+                        <img class="lux-image" src="assets/images/mebel anak.jpg" alt="Mebel Anak" loading="lazy">
+                        <div class="lux-overlay">
+                            <span class="lux-category">KIDS</span>
+                            <button class="lux-btn">Detail</button>
+                        </div>
+                    </div>
+                    <div class="lux-info">
+                        <h3 class="lux-info-title">Mebel Anak</h3>
+                        <p class="lux-info-desc">Furniture Aman & Nyaman untuk Anak</p>
+                        <div class="lux-badges">
+                            <span class="lux-badge">Premium</span>
+                            <span class="lux-badge">Safe</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pintu -->
+            <div class="lux-item" style="--item-index: 3">
+                <div class="lux-frame">
+                    <div class="lux-image-container">
+                        <img class="lux-image" src="assets/images/pintu.jpg" alt="Pintu" loading="lazy">
+                        <div class="lux-overlay">
+                            <span class="lux-category">DOOR</span>
+                            <button class="lux-btn">Detail</button>
+                        </div>
+                    </div>
+                    <div class="lux-info">
+                        <h3 class="lux-info-title">Pintu</h3>
+                        <p class="lux-info-desc">Pintu Eksklusif dengan Detail Premium</p>
+                        <div class="lux-badges">
+                            <span class="lux-badge">Premium</span>
+                            <span class="lux-badge">Exclusive</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ruang Kamar -->
+            <div class="lux-item" style="--item-index: 4">
+                <div class="lux-frame">
+                    <div class="lux-image-container">
+                        <img class="lux-image" src="assets/images/ruang kamar.jpg" alt="Ruang Kamar" loading="lazy">
+                        <div class="lux-overlay">
+                            <span class="lux-category">BEDROOM</span>
+                            <button class="lux-btn">Detail</button>
+                        </div>
+                    </div>
+                    <div class="lux-info">
+                        <h3 class="lux-info-title">Ruang Kamar</h3>
+                        <p class="lux-info-desc">Furniture Kamar Tidur Mewah</p>
+                        <div class="lux-badges">
+                            <span class="lux-badge">Premium</span>
+                            <span class="lux-badge">Luxury</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ruang Keluarga -->
+            <div class="lux-item" style="--item-index: 5">
+                <div class="lux-frame">
+                    <div class="lux-image-container">
+                        <img class="lux-image" src="assets/images/ruang keluarga.jpg" alt="Ruang Keluarga" loading="lazy">
+                        <div class="lux-overlay">
+                            <span class="lux-category">LIVING</span>
+                            <button class="lux-btn">Detail</button>
+                        </div>
+                    </div>
+                    <div class="lux-info">
+                        <h3 class="lux-info-title">Ruang Keluarga</h3>
+                        <p class="lux-info-desc">Furniture Ruang Keluarga Eksklusif</p>
+                        <div class="lux-badges">
+                            <span class="lux-badge">Premium</span>
+                            <span class="lux-badge">Comfort</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ruang Makan -->
+            <div class="lux-item" style="--item-index: 6">
+                <div class="lux-frame">
+                    <div class="lux-image-container">
+                        <img class="lux-image" src="assets/images/ruang makan.jpg" alt="Ruang Makan" loading="lazy">
+                        <div class="lux-overlay">
+                            <span class="lux-category">DINING</span>
+                            <button class="lux-btn">Detail</button>
+                        </div>
+                    </div>
+                    <div class="lux-info">
+                        <h3 class="lux-info-title">Ruang Makan</h3>
+                        <p class="lux-info-desc">Set Meja Makan Premium</p>
+                        <div class="lux-badges">
+                            <span class="lux-badge">Premium</span>
+                            <span class="lux-badge">Elegant</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ruang Tamu -->
+            <div class="lux-item" style="--item-index: 7">
+                <div class="lux-frame">
+                    <div class="lux-image-container">
+                        <img class="lux-image" src="assets/images/ruang tamu.jpg" alt="Ruang Tamu" loading="lazy">
+                        <div class="lux-overlay">
+                            <span class="lux-category">GUEST</span>
+                            <button class="lux-btn">Detail</button>
+                        </div>
+                    </div>
+                    <div class="lux-info">
+                        <h3 class="lux-info-title">Ruang Tamu</h3>
+                        <p class="lux-info-desc">Furniture Ruang Tamu Mewah</p>
+                        <div class="lux-badges">
+                            <span class="lux-badge">Premium</span>
+                            <span class="lux-badge">Luxurious</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Script untuk Intersection Observer -->
+    <script>
+       // Tunggu hingga DOM selesai dimuat
+document.addEventListener('DOMContentLoaded', function() {
+    // Pilih semua item katalog
+    const catalogItems = document.querySelectorAll('.catalog-item');
+    
+    // Konfigurasi Intersection Observer
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+    
+    // Buat observer
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe setiap item katalog
+    catalogItems.forEach(item => {
+        observer.observe(item);
+    });
+});
+    </script>
+</body>
+</html>
+
+    <!-- Custom Section -->
+    <section class="custom-section">
+        <div class="custom-slide" style="background-image: url('C:/Users/ASUS/Desktop/furniture/assets/images/1.jpg');">
+            <div class="custom-text">
+                <h1>Mewah, Berkualitas, dan Personal</h1>
+                <p>Wujudkan furnitur impian Anda dengan desain eksklusif yang menyesuaikan kebutuhan dan gaya Anda. Dari minimalis modern hingga klasik elegan, kami melayani pembuatan untuk rumah, kafe, restoran, hotel, vila, kantor, dan ruang publik lainnya.</p>
+            </div>
+        </div>
+    </section>
+
+ <!-- New Section after Custom Section -->
+<section style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); width: 100%; margin: 0; border-radius: 0;">
+    <div class="container">
+        <!-- Bagian 1: Tentang Kami -->
+        <div class="about-us">
+            <h2 class="underline">Tentang Kami</h2>
+            <p>Toko Mebel Jepara Real adalah penyedia mebel berkualitas tinggi dengan pengalaman lebih dari 10 tahun di bidang ini. Kami berkomitmen untuk memberikan produk terbaik dan pelayanan terbaik kepada setiap pelanggan kami.</p>
+        </div>
+
+        <!-- Bagian 2: Payment -->
+        <div class="payment">
+            <h2 class="underline">Payment</h2>
+            <div class="payment-content">
+                <img src="assets/icons/mandiri.png" alt="Mandiri Logo">
+                <p>No Rekening: 1234567890</p>
+            </div>
+        </div>
+
+        <!-- Bagian 3: Ikuti Kami -->
+        <div class="follow-us">
+            <h2 class="underline">Ikuti Kami</h2>
+            <div class="social-icons">
+                <img src="assets/icons/whatsapp.png" alt="Whatsapp">
+                <img src="assets/icons/gmail.png" alt="Gmail">
+                <img src="assets/icons/instagram.png" alt="Instagram">
+            </div>
+        </div>
+
+        <!-- Bagian 4: Alamat Kami -->
+        <div class="address">
+            <h2 class="underline">Alamat Kami</h2>
+            <p>Desa Mindahan, Kecamatan Batealit RT.03/RW.02 Kabupaten Jepara 59461</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer style="background-color: black; color: white; padding: 20px 0; text-align: center; margin: 0;">
+    <p>&copy; 2025 Furniture Jepara Real. All Rights Reserved.</p>
+</footer>
+</body>
+</html>

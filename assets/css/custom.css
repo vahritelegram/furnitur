@@ -1,0 +1,54 @@
+.custom-section {
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.custom-slide {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.custom-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.custom-text {
+    color: #fff;
+    text-align: center;
+    z-index: 2;
+    max-width: 80%;
+    padding: 20px;
+}
+
+.custom-text h1 {
+    font-size: 3.5rem;
+    font-family: 'Georgia', serif;
+    margin-bottom: 20px;
+}
+
+.custom-text p {
+    font-size: 1.2rem;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
